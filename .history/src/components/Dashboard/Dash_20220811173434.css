@@ -1,0 +1,5 @@
+.title-container{
+    text-align: center;
+    position: relative;
+    top: calc(50% - 100px/2 - 200px);
+}

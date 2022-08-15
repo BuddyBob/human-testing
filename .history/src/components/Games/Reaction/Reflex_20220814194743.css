@@ -1,0 +1,120 @@
+
+/* CSS */
+
+.reflex-button {
+    position: relative;
+    height: 528px;
+    width:1100px;
+    top:100px;
+    border-radius: 46px;
+    box-shadow: 8px 8px 20px 0px #22252C;
+}
+
+.reflex-button, select, textarea{
+    color: var(--text);
+    font-size: 90px;
+}
+
+.time{
+    color: var(--text);
+    font-size:20px;
+}
+.prev-time{
+    color: var(--text);
+    font-size:20px;
+}
+
+.timer-container{
+    position: absolute;
+    top:370px;
+}
+
+.chart-container{
+    position: relative;
+    width:34.5%;
+    top:50px;
+    margin-bottom:10%;
+}
+
+.chart{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+
+/* media queries */
+
+
+/* timer media queries */
+
+@media screen and (max-width: 575px) {
+    .timer-container{
+        top:270px;
+    }
+    .time{
+        font-size:17px;
+    }
+    .prev-time{
+        font-size:17px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .timer-container{
+        top:320px;
+    }
+    .time{
+        font-size:15px;
+    }
+    .prev-time{
+        font-size:15px;
+    }
+}
+    
+
+
+
+
+/* button media queries */
+
+@media screen and (max-width: 1110px) {
+    .reflex-button{
+        width:700px;
+        height:400px;
+    }
+    .reflex-button, select, textarea{
+        color: var(--text);
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .reflex-button{
+        width:500px;
+        height:300px;
+    }
+    .reflex-button, select, textarea{
+        color: var(--text);
+        font-size: 60px;
+    }
+}
+    
+@media screen and (max-width: 720px) {
+
+    .reflex-button{
+        display:inline-block;
+        height:200px;
+        border-radius: 30px;
+        position: relative;
+        margin-bottom:50px;
+    }
+    .reflex-button, select, textarea{
+        color: var(--text);
+        font-size: 35px;
+    }
+}
+    
+    

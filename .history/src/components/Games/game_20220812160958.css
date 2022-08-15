@@ -1,0 +1,12 @@
+.game-title{
+    font-size: 90px;
+    position: relative;
+    bottom:20px;
+}
+
+.game-subtitle{
+    font-size: 40px;
+    position: relative;
+    top:20px;
+    color: var(--text);
+}

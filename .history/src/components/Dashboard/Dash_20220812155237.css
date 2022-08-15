@@ -1,0 +1,153 @@
+.vector2{
+    position: absolute;
+    width: 534px;
+    height: 209.02px;
+    left: -17px;
+    top: -15px;
+
+}
+
+.title-container{
+    text-align: center;
+    padding-top:60px;
+}
+
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 80px;
+    position: relative;
+    top:80px;
+}
+
+
+
+.card{
+    width: 344px;
+    height: 450px;
+    left: 976px;
+    top: 0px;
+
+    background: #30353E;
+    border-radius: 46px;
+
+    box-shadow: 13px 12px 4px #22252C;
+}
+
+.card:hover{
+    box-shadow: 2px 2px 0px #22252C;
+    /* rotate: 2deg; */
+    position: relative;
+    left:20px;
+}
+
+
+
+.card-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.card-title{
+    font-size: 35px;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--text);
+    margin-top:100px;
+}
+
+.card-icon{
+    position: relative;
+    margin-top:35px;
+}
+
+.card-text{
+    font-size: 23px;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--text);
+    text-align: center;
+
+    position: relative;
+    top:40px;
+
+}
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 80px;
+        position: relative;
+        top:-10px;
+    }
+    .card{
+        width: 400px;
+        height: 450px;
+
+    }
+    .title-container{
+        position: relative;
+        bottom:40px;
+    }
+    .vector2{
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        top:-30px;
+    }
+}
+
+/* create media query for mobile devices and tablets for dash-title */
+
+@media screen and (max-width: 500px) {
+    .dash-title{
+        font-size:60px;
+    }
+    .card-container{
+
+        position: absolute;
+        top:200px;
+    }
+    .card{
+        width: 300px;
+        height: 400px;
+    }
+
+    .card-title{
+        font-size: 30px;
+        position: relative;
+        bottom:20px;
+    }
+    .card-icon{
+        position: relative;
+        bottom:20px;
+    }
+    .card-text{
+        font-size: 20px;
+        position: relative;
+        top:20px;
+    }
+    .vector2{
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top:-50px;
+    }
+}

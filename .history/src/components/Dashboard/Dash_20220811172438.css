@@ -1,0 +1,15 @@
+.dash-title{
+    position: absolute;
+    width: 654px;
+    height: 133px;
+    left: calc(50% - 654px/2);
+    top: calc(50% - 133px/2 - 340px);
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 127px;
+    line-height: 165px;
+
+    color: #D9394C;
+}

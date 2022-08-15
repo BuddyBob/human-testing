@@ -1,0 +1,14 @@
+:root {
+    --background:#2F383E;
+    --highlight:#ED982A;
+    --text:#FFEBCD;
+}
+
+* {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+
+

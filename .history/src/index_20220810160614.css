@@ -1,0 +1,17 @@
+:root {
+    --background:#2B303A;
+    --highlight:#ED982A;
+    --text:#FFEBCD;
+}
+
+* {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    
+    background: #2B303A;
+    border-radius: 21px;
+  }
+
+
+

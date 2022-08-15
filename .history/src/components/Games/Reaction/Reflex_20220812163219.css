@@ -1,0 +1,15 @@
+
+/* CSS */
+.reflex-button {
+    position: relative;
+    left: 319px;
+    top: 450px;
+    
+    background: #B14855;
+    border-radius: 46px;
+}
+
+.reflex-button, select, textarea{
+    color: var(--text);
+    font-size: 100px;
+}

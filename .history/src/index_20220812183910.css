@@ -1,0 +1,153 @@
+:root {
+    --background:#2B303A;
+    --main:#D9394C;
+    --secondary:#7C7C7C;
+    --highlight:#92DCE5;
+    --text:#ffebcd;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+body{
+    background: var(--background);
+}
+
+
+
+h1{
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 167px;
+    color: var(--main);
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 80px;
+}
+
+.title-container{
+    text-align: center;
+    padding-top:60px;
+}
+
+.home-title{
+    position: absolute;
+    top:25%;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 167px;
+    color: var(--main);
+}
+
+.subtitle{
+    position: absolute;
+    top:43%;
+
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 52px;
+
+    color: var(--text);
+}
+.display-target{
+    position: absolute;
+    margin-left: auto;
+    left:80%;
+    top:3rem;
+    width:10%; /* you can use % */
+    height: auto;
+
+}
+
+.vector1{
+    z-index: inherit;
+    position: fixed;
+    min-width: 100%;
+    left: 0px;
+    right: 0px;
+    top: 60.59%;
+    bottom: 0%;
+    padding-right:0px;
+}
+
+.arrow1{
+    position: absolute;
+    z-index: 3;
+    color:var(--main);
+    cursor: pointer;
+    top:60%
+}
+
+/* arrow animation */
+
+.arrow1:hover{
+    animation: arrow1 2s infinite;
+    
+}
+
+.bounce {
+    animation: bounce 3s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      40% {
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+      }
+      60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+      }
+  }
+
+
+  /* Media Queries */
+
+
+  @media screen and (max-width: 700px) {
+    .home-title{
+        font-size: 45px;
+        line-height: 80px;
+    }
+
+    .home-subtitle{
+        font-size: 28px;
+    }
+
+    .arrow1{
+        width:30px;
+    }
+
+  }

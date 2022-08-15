@@ -1,0 +1,24 @@
+.title-container{
+    text-align: center;
+    padding-top:60px;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.card{
+    width: 344px;
+    height: 450px;
+    left: 976px;
+    top: 0px;
+
+    background: rgba(124, 124, 124, 0.06);
+    border-radius: 46px;
+}

@@ -1,0 +1,31 @@
+:root {
+    --background:#2B303A;
+    --highlight:#ED982A;
+    --text:#FFEBCD;
+}
+*{
+    width: 1920px;
+    height: 1080px;
+    
+    background: #2B303A;
+    border-radius: 21px;
+}
+
+.home-title{
+    position: absolute;
+    width: 622px;
+    height: 154px;
+    left: calc(50% - 622px/2);
+    top: calc(50% - 154px/2 - 148px);
+    
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 167px;
+    
+    color: #D9394C;
+    
+
+}
+

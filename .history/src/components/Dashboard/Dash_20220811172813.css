@@ -1,0 +1,6 @@
+.dash-title{
+    position: absolute;
+    height: 140px;
+    left: calc(50% - 622px/2);
+    top: calc(50% - 110px/2 - 130px);
+}

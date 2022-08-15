@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+.main-container{
+    height: 100vh;
+    background: var(--background);
+}
+.dash-title{
+    position: absolute;
+    width: 654px;
+    height: 133px;
+    left: calc(50% - 654px/2);
+    top: calc(50% - 133px/2 - 340px);
+}

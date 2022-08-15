@@ -1,0 +1,74 @@
+
+/* CSS */
+
+.reflex-button {
+    position: relative;
+    height: 528px;
+    width:1100px;
+    top:100px;
+    border-radius: 46px;
+    box-shadow: 8px 8px 20px 0px #22252C;
+}
+
+.reflex-button, select, textarea{
+    color: var(--text);
+    font-size: 90px;
+}
+
+.time{
+    color: var(--text);
+    font-size:20px;
+}
+.prev-time{
+    color: var(--text);
+    font-size:20px;
+}
+
+.timer-container{
+    position: relative;
+    top:200px;
+    width:50%;
+
+}
+
+
+/* button media queries */
+
+@media screen and (max-width: 1110px) {
+    .reflex-button{
+        width:700px;
+        height:400px;
+    }
+    .reflex-button, select, textarea{
+        color: var(--text);
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .reflex-button{
+        width:500px;
+        height:300px;
+    }
+    .reflex-button, select, textarea{
+        color: var(--text);
+        font-size: 60px;
+    }
+}
+    
+@media screen and (max-width: 720px) {
+
+    .reflex-button{
+        display:inline-block;
+        height:200px;
+        border-radius: 30px;
+        position: relative;
+        margin-bottom:50px;
+    }
+    .reflex-button, select, textarea{
+        color: var(--text);
+        font-size: 35px;
+    }
+}
+    
+    

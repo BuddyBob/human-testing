@@ -1,0 +1,23 @@
+:root {
+    --background:#;
+    --highlight:#;
+    --text:#;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--text);
+}
+
+html{
+    -webkit-overflow-x-scrolling: hidden;
+       overflow-x: hidden !important;
+    -webkit-overflow-x-scrolling: hidden;
+}
+body{
+    margin:0;
+    padding:0;
+    -webkit-overflow-x-scrolling: hidden;
+    -webkit-overflow-x-scrolling: hidden;
+    overflow-x: hidden !important;fdf
+}

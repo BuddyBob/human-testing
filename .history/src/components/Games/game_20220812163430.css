@@ -1,0 +1,24 @@
+.game-title{
+    font-size: 90px;
+    position: relative;
+    top:50px;
+}
+
+.game-subtitle{
+    font-size: 25px;
+    position: relative;
+    top:60px;
+    color: var(--text);
+}
+
+@media screen and (max-width: 768px) {
+    .game-title{
+        font-size: 50px;
+        top:20px;
+    }
+    .game-subtitle{
+        font-size: 15px;
+        top:30px;
+    }
+}
+    

@@ -1,0 +1,16 @@
+.title-container{
+    text-align: center;
+    margin-top:50%;
+}
+
+.card-container .card1{
+    box-sizing: border-box;
+    position: relative;
+    width: 344px;
+    height: 450px;
+    left: 976px;
+    top: 0px;
+
+    background: rgba(124, 124, 124, 0.06);
+    border-radius: 46px;
+}

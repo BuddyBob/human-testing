@@ -1,0 +1,12 @@
+.title-container{
+    text-align: center;
+    padding-top:60px;
+}
+
+.card-container{
+        display: flex;
+        flex-direction: column;
+        margin:auto;
+        position: relative; 
+        z-index: 1;
+}

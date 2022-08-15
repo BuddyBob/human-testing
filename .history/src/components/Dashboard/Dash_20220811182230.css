@@ -1,0 +1,19 @@
+.title-container{
+    text-align: center;
+    padding-top:60px;
+}
+
+.card-container{
+        display: flex;
+        flex-direction: column;
+        margin:auto;
+        position: relative; 
+        z-index: 1;
+}
+
+.card{
+
+
+    background: rgba(124, 124, 124, 0.06);
+    border-radius: 46px;
+}

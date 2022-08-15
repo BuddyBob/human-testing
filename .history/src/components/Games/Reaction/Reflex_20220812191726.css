@@ -1,0 +1,24 @@
+
+/* CSS */
+
+.reflex-container{
+
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.reflex-button {
+    position: relative;
+
+    height: 528px;
+    width:50px
+
+    top:100px;
+    
+    background: #B14855;
+    border-radius: 46px;
+}
+
+.reflex-button, select, textarea{
+    color: var(--text);
+    font-size: 100px;
+}

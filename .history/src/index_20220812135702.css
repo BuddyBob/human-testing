@@ -1,0 +1,144 @@
+:root {
+    --background:#2B303A;
+    --main:#D9394C;
+    --secondary:#7C7C7C;
+    --highlight:#92DCE5;
+    --text:#ffebcd;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+body{
+    background: var(--background);
+}
+
+
+
+h1{
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 167px;
+    color: var(--main);
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 80px;
+}
+
+.home-title{
+    position: relative;
+    top:30px;
+}
+
+.home-subtitle{
+    position: relative;
+    top:20px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 52px;
+
+    color: var(--text);
+}
+.display-target{
+    position: relative;
+    left:50%
+
+}
+
+.vector1{
+    z-index: inherit;
+    position: fixed;
+    min-width: 100%;
+    left: 0px;
+    right: 0px;
+    top: 60.59%;
+    bottom: 0%;
+    padding-right:0px;
+}
+
+.arrow1{
+    position: absolute;
+    z-index: 3;
+    width:50px;
+    height:60px;
+    color:var(--main);
+    left: calc(48% - 62.01px/2 + 24.5px);
+    top: calc(50% - 0px/2 + 140px); 
+    cursor: pointer;
+}
+
+/* arrow animation */
+
+.arrow1:hover{
+    animation: arrow1 2s infinite;
+    
+}
+
+.bounce {
+    animation: bounce 3s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      40% {
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+      }
+      60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+      }
+  }
+
+
+  /* Media Queries */
+
+  /* media query title at 680 (shrink) */
+
+ 
+  
+  /* media query title at 680 (shrink) */
+  @media screen and (max-width: 700px) {
+    .home-title{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1{
+        font-size: 70px;
+        line-height: 80px;
+    }
+    .home-subtitle{
+        font-size: 30px;
+    }
+
+  }
