@@ -1,0 +1,7 @@
+.aim-container{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background: var(--secondary);
+    opacity: 0.2;
+}

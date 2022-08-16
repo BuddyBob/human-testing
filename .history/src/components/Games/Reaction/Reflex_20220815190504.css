@@ -36,6 +36,7 @@
     padding: 10px 0 25px;
     height: auto;
     right:0%;
+    border: red solid 1px;
     width:51%;
 }
 
@@ -46,7 +47,7 @@
 
 /* chart media queries */
 
-@media screen and (max-width: 504px) {
+@media screen and (max-width: 414px) {
     .chart-container{
         position: relative;
         top:50px;

@@ -16,7 +16,7 @@ export default function App() {
             <Route  exact path='/' element={<Home/>} />
             <Route  exact path='/dashboard' element={<Dashboard/>} />
             <Route  exact path='/games/reaction' element={<Reflex/>} />
-            <Route  exact path='/games/mouse-aim' element={<MouseAim/>} />
+            <Route  exact path='/games/mouseaim' element={<MouseAim/>} />
           </Routes>
     );
   }

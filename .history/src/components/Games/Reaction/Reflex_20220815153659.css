@@ -35,8 +35,7 @@
     top:50px;
     padding: 10px 0 25px;
     height: auto;
-    right:0%;
-    width:51%;
+    right:25%;
 }
 
 
@@ -45,18 +44,6 @@
 
 
 /* chart media queries */
-
-@media screen and (max-width: 504px) {
-    .chart-container{
-        position: relative;
-        top:50px;
-        padding: 10px 0 25px;
-        height: auto;
-        right:0%;
-        width:100%;
-    }
-    
-}
 
 
 /* timer media queries */
