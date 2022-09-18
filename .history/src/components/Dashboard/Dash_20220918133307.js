@@ -43,7 +43,7 @@ export default function Dash() {
                         </div>
                     </div>
 
-                    <div className="card" onClick={()=>{navigate('/games/memory')}}>
+                    <div className="card" onClick={()=>{navigate('/games/mouse-aim')}}>
                         <div className="card-contents">
                             <p className="card-title">
                                 Sequences

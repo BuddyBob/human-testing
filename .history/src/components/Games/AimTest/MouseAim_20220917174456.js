@@ -18,35 +18,27 @@ function MouseAim() {
 
     let intervalRef = useRef();
 
-    async function addData(){
+    function addData(){
         let games = localStorage.getItem('games')
         let games_parsed = JSON.parse(games)
-        await games_parsed.mouse_aim.times.push(time.toFixed(3))
+        games_parsed.reflex.times.push(time.toFixed(3))
 
-        //get average if last target present
-        if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length == 9){
-            console.log('hii')
-            let sum = 0
-            for (let i = 0; i < games_parsed.mouse_aim.times.length; i++){
-                sum += parseFloat(games_parsed.mouse_aim.times[i])
-            }
-            let avg = sum / games_parsed.mouse_aim.times.length
-            games_parsed.mouse_aim.average.push(avg.toFixed(3))
+        //get average
+        let sum = 0
+        for (let i = 0; i < games_parsed.mouse_aim.times.length; i++){
+            sum += parseFloat(games_parsed.mouse_aim.times[i])
         }
-        localStorage.setItem('games', JSON.stringify(games_parsed))
-    }
-    function removeData(){
-        let games = localStorage.getItem('games')
-        let games_parsed = JSON.parse(games)
-        games_parsed.mouse_aim.times = []
+        let average = sum / games_parsed.mouse_aim.times.length
+        games_parsed.mouse_aim.average = average.toFixed(3)
         localStorage.setItem('games', JSON.stringify(games_parsed))
     }
 
     //wait for elementDimensions to be set
-    async function targetClicked(){
+    function targetClicked(){
+        console.log(times)
         //stop timer if running
         if (timerStarted){
-            await addData();
+            console.log(time)
             clearInterval(intervalRef.current)
             setTime(0)
         }
@@ -65,22 +57,12 @@ function MouseAim() {
             setTime((time) => time + .01);
         } , 10);
 
-        //if 20 items clicked setStart to false , setTimerStarted to false, setTarget to false, setTime to 0
-        console.log(localStorage.getItem('games'))
-        console.log(JSON.parse(localStorage.getItem('games')).mouse_aim.times.length)
-        if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length === 10){
-            console.log("10 items clicked")
-            setStart(false)
-            setTimerStarted(false)
-            setTime(0)
-            console.log(localStorage.getItem('games'))
-            removeData()
-        }
-
 
     }
 
     useEffect(() => {
+        console.log('elementDimensions', elementDimensions.current?.clientHeight)
+        console.log("hello")
         setTarget(true)
 
     } , [elementDimensions])

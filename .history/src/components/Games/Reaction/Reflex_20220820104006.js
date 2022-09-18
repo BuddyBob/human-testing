@@ -66,7 +66,6 @@ export default function Reflex() {
         //check if user is already waiting for wait...
         if (!timerStarted){
             console.log("GAME STARTED?")
-            
             sleep(Math.floor(Math.random() * (6000 - 3000 + 1)) + 3000).then(() => {
                 setTimerStarted(true)
                 //after wait time, start click! timer and show click! button

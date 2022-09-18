@@ -18,20 +18,19 @@ function MouseAim() {
 
     let intervalRef = useRef();
 
-    async function addData(){
+    function addData(){
         let games = localStorage.getItem('games')
         let games_parsed = JSON.parse(games)
-        await games_parsed.mouse_aim.times.push(time.toFixed(3))
+        games_parsed.mouse_aim.times.push(time.toFixed(3))
 
         //get average if last target present
-        if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length == 9){
-            console.log('hii')
+        if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length === 10){
             let sum = 0
             for (let i = 0; i < games_parsed.mouse_aim.times.length; i++){
                 sum += parseFloat(games_parsed.mouse_aim.times[i])
             }
-            let avg = sum / games_parsed.mouse_aim.times.length
-            games_parsed.mouse_aim.average.push(avg.toFixed(3))
+            let average = sum / games_parsed.mouse_aim.times.length
+            games_parsed.mouse_aim.average.push(average.toFixed(3))
         }
         localStorage.setItem('games', JSON.stringify(games_parsed))
     }

@@ -6,16 +6,8 @@ export default function TimesChart(props) {
     let dataPoints = []
     let data = localStorage.getItem('games')
     let data_parsed = JSON.parse(data)
-    if (props.game == "mouse_aim"){
-        for (let i = 0; i < data_parsed.mouse_aim.average.length; i++){
-            dataPoints.push({x: i, y: parseFloat(data_parsed.mouse_aim.average[i])})
-        }
-    }
-    
-    else if (props.game == "reflex"){
-        for (let i = 0; i < data_parsed.reflex.times.length; i++){
-            dataPoints.push({x: i, y: parseFloat(data_parsed.reflex.times[i])})
-        }
+    for (let i = 1; i < data_parsed.props.game.times.length; i++){
+        dataPoints.push({x: i, y: parseFloat(data_parsed.props.game.times[i])})
     }
 
     let options = {
