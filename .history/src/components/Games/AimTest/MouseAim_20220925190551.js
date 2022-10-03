@@ -25,13 +25,12 @@ function MouseAim() {
 
         //get average if last target present
         if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length == 9){
-            JSON.parse(localStorage.getItem('games')).mouse_aim.times.shift()
-            let t = JSON.parse(localStorage.getItem('games')).mouse_aim.times
+            console.log('hii')
             let sum = 0
-            for (let i = 0; i < t.length; i++){
-                sum += parseFloat(t[i])
+            for (let i = 0; i < games_parsed.mouse_aim.times.length; i++){
+                sum += parseFloat(games_parsed.mouse_aim.times[i])
             }
-            let avg = sum / t.length
+            let avg = sum / games_parsed.mouse_aim.times.length
             games_parsed.mouse_aim.average.push(avg.toFixed(3))
         }
         localStorage.setItem('games', JSON.stringify(games_parsed))
@@ -68,9 +67,11 @@ function MouseAim() {
 
         //if 20 items clicked setStart to false , setTimerStarted to false, setTarget to false, setTime to 0
         if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length === 10){
+            console.log("ended?",timerStarted)
             setStart(false)
             setTimerStarted(false)
             setTime(0)
+            console.log(JSON.parse(localStorage.getItem('games')).mouse_aim.times)
             removeData()
         }
 
@@ -119,12 +120,12 @@ function MouseAim() {
                 <div className="num-stats">
                     <div className="row">
                         <p>
-                            <strong>Best Time:</strong> {_.min(JSON.parse(localStorage.getItem('games')).mouse_aim.average)}
+                            <strong>Best Time:</strong> {_.min(JSON.parse(localStorage.getItem('games').shift()).mouse_aim.average)}
                         </p>
                     </div>
                     <div className="row">
                         <p>
-                            <strong>Worst Time:</strong> {_.max(JSON.parse(localStorage.getItem('games')).mouse_aim.average)}
+                            <strong>Worst Time:</strong> {_.max(JSON.parse(localStorage.getItem('games').shift()).mouse_aim.average)}
                         </p>
                     </div>
                 </div>

@@ -1,0 +1,37 @@
+.memory-container{
+    position: relative;
+    min-width: 500px;
+    min-height: 500px;
+    margin-top:50px;
+}
+
+.start-button{
+    background-color: #75c8e6;
+    border: #75c8e6 solid 2px;
+    position: relative;
+    height: 528px;
+    width:1100px;
+    top:100px;
+    border-radius: 46px;
+    box-shadow: 8px 8px 20px 0px #22252C;
+}
+
+.start-button, select, textarea{
+    color: var(--text);
+    font-size: 90px;
+}
+
+.grid {
+    display: flex;                       /* establish flex container */
+    flex-wrap: wrap;                     /* enable flex items to wrap */
+    justify-content: space-around;
+    
+  }
+  .cell {
+    flex: 0 0 32%;                       /* don't grow, don't shrink, width */
+    height: 160px;
+    margin-bottom: 5px;
+    background-color: #333842;
+    border: 1px solid #484c53;
+    border-radius: 30px;
+  }

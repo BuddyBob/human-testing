@@ -16,7 +16,7 @@ export default function Memory(){
     document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('light')
   }
 
-  var temp;
+  let temp;
   async function lightUp(){
     //light up cells according to problemSet
     console.log(problemSet)

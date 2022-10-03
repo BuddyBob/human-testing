@@ -68,9 +68,11 @@ function MouseAim() {
 
         //if 20 items clicked setStart to false , setTimerStarted to false, setTarget to false, setTime to 0
         if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length === 10){
+            console.log("ended?",timerStarted)
             setStart(false)
             setTimerStarted(false)
             setTime(0)
+            console.log(JSON.parse(localStorage.getItem('games')).mouse_aim.times)
             removeData()
         }
 

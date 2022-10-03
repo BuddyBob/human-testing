@@ -25,8 +25,8 @@ function MouseAim() {
 
         //get average if last target present
         if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length == 9){
-            JSON.parse(localStorage.getItem('games')).mouse_aim.times.shift()
-            let t = JSON.parse(localStorage.getItem('games')).mouse_aim.times
+            let t = JSON.parse(localStorage.getItem('games')).mouse_aim.times.shift()
+            console.log(t)
             let sum = 0
             for (let i = 0; i < t.length; i++){
                 sum += parseFloat(t[i])
@@ -68,9 +68,11 @@ function MouseAim() {
 
         //if 20 items clicked setStart to false , setTimerStarted to false, setTarget to false, setTime to 0
         if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length === 10){
+            console.log("ended?",timerStarted)
             setStart(false)
             setTimerStarted(false)
             setTime(0)
+            console.log(JSON.parse(localStorage.getItem('games')).mouse_aim.times)
             removeData()
         }
 

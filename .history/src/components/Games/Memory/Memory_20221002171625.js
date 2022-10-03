@@ -16,7 +16,6 @@ export default function Memory(){
     document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('light')
   }
 
-  var temp;
   async function lightUp(){
     //light up cells according to problemSet
     console.log(problemSet)
@@ -31,13 +30,12 @@ export default function Memory(){
       await dim(i)
     }
     console.log(problemSet)
-    temp = problemSet
     setProblem(false)
   }
 
   function cellClick(c){
     //add cell to guessSet and wait for it to add
-    console.log(temp)
+    // console.log(problemSet)
     setGuessSet(guessSet => [...guessSet, c])
     //get new length of guessSet 
 

@@ -8,7 +8,7 @@ export default function Memory(){
   const [start, setStart] = useState(false)
   const [problem, setProblem] = useState(false)
   const [level, setLevel] = useState(5)
-  const [problemSet, setProblemSet] = useState([])
+  const [problemSet, setProblemSet] = useState([10])
   const [guessSet, setGuessSet] = useState([])
 
   async function dim(i){
@@ -16,7 +16,6 @@ export default function Memory(){
     document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('light')
   }
 
-  var temp;
   async function lightUp(){
     //light up cells according to problemSet
     console.log(problemSet)
@@ -31,37 +30,42 @@ export default function Memory(){
       await dim(i)
     }
     console.log(problemSet)
-    temp = problemSet
     setProblem(false)
   }
 
   function cellClick(c){
     //add cell to guessSet and wait for it to add
-    console.log(temp)
     setGuessSet(guessSet => [...guessSet, c])
     //get new length of guessSet 
-
-    
     let clickCount = guessSet.length
-
-
-
+    console.log(guessSet)
+    console.log(problemSet)
     if (guessSet === problemSet.splice(0,clickCount)){
       console.log(guessSet,problemSet.splice(0,clickCount))
     }
 
   }
 
+
+  let tempL = problemSet
+
   if (problem){
     //generate cell positions for problem
     for (let i = 0; i < level; i++) {
-      setProblemSet(problemSet.push(Math.floor(Math.random() * 9)))
+      console.log('hello')
+      tempL.push(_.random(0,9))
     }
 
     setProblem(false)
     lightUp()
   }
 
+  useEffect(() => {
+    //append replace problemSet with tempL
+    console.log(tempL)
+    setProblemSet(problemSet => [...problemSet, tempL])
+    tempL = []
+  }, [])
 
   return (
     <div>

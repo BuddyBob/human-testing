@@ -7,7 +7,7 @@ import _ from "lodash";
 export default function Memory(){
   const [start, setStart] = useState(false)
   const [problem, setProblem] = useState(false)
-  const [level, setLevel] = useState(5)
+  const [level, setLevel] = useState(10)
   const [problemSet, setProblemSet] = useState([])
   const [guessSet, setGuessSet] = useState([])
 
@@ -16,52 +16,32 @@ export default function Memory(){
     document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('light')
   }
 
-  var temp;
   async function lightUp(){
     //light up cells according to problemSet
     console.log(problemSet)
-    //wait for cells to load
+    //iterate through problemSet and change the according cell's id to light
     await new Promise(resolve => setTimeout(resolve, 500));
-    //iterate through problem set and light up according cells
     for (let i = 0; i < problemSet.length; i++){
+
+      //change id of cell1 but wait for HTML to load
       document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('dim')
       document.getElementsByClassName("cell"+problemSet[i])[0].classList.add('light')
-      //wait for cells to light up then dim them
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise(resolve => setTimeout(resolve, 700));
       await dim(i)
     }
-    console.log(problemSet)
-    temp = problemSet
     setProblem(false)
   }
 
-  function cellClick(c){
-    //add cell to guessSet and wait for it to add
-    console.log(temp)
-    setGuessSet(guessSet => [...guessSet, c])
-    //get new length of guessSet 
-
-    
-    let clickCount = guessSet.length
-
-
-
-    if (guessSet === problemSet.splice(0,clickCount)){
-      console.log(guessSet,problemSet.splice(0,clickCount))
-    }
-
-  }
+  
 
   if (problem){
     //generate cell positions for problem
     for (let i = 0; i < level; i++) {
-      setProblemSet(problemSet.push(Math.floor(Math.random() * 9)))
+      setProblemSet(problemSet.push(_.random(1, 9)))
     }
-
     setProblem(false)
     lightUp()
   }
-
 
   return (
     <div>

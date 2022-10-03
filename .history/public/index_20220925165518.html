@@ -23,5 +23,29 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      var callback = function(){
+        for (let i = 0; i < problemSet.length; i++){
+
+          //change id of cell1 but wait for HTML to load
+            document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('dim')
+            document.getElementsByClassName("cell"+problemSet[i])[0].classList.add('light')
+
+          }
+      };
+
+
+
+
+
+      if (
+      document.readyState === "complete" ||
+      (document.readyState !== "loading" && !document.documentElement.doScroll)
+      ) {
+      callback();
+      } else {
+      document.addEventListener("DOMContentLoaded", callback);
+      }
+    </script>
   </body>
 </html>

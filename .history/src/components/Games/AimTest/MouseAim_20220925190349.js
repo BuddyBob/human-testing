@@ -25,13 +25,12 @@ function MouseAim() {
 
         //get average if last target present
         if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length == 9){
-            JSON.parse(localStorage.getItem('games')).mouse_aim.times.shift()
-            let t = JSON.parse(localStorage.getItem('games')).mouse_aim.times
+            console.log('hii')
             let sum = 0
-            for (let i = 0; i < t.length; i++){
-                sum += parseFloat(t[i])
+            for (let i = 0; i < games_parsed.mouse_aim.times.length; i++){
+                sum += parseFloat(games_parsed.mouse_aim.times[i])
             }
-            let avg = sum / t.length
+            let avg = sum / games_parsed.mouse_aim.times.length
             games_parsed.mouse_aim.average.push(avg.toFixed(3))
         }
         localStorage.setItem('games', JSON.stringify(games_parsed))
@@ -55,6 +54,7 @@ function MouseAim() {
 
         //pick new target position
         setTarget(false)
+        console.log("Clicked")
         setTleft(_.random(0, elementDimensions.current?.clientWidth-100))
         setTtop(_.random(0, elementDimensions.current?.clientHeight-100))
         setTarget(true)
@@ -67,10 +67,15 @@ function MouseAim() {
         } , 10);
 
         //if 20 items clicked setStart to false , setTimerStarted to false, setTarget to false, setTime to 0
+        console.log(localStorage.getItem('games'))
+        console.log(JSON.parse(localStorage.getItem('games')).mouse_aim.times.length)
         if (JSON.parse(localStorage.getItem('games')).mouse_aim.times.length === 10){
+            console.log("ended?",timerStarted)
+            console.log("10 items clicked")
             setStart(false)
             setTimerStarted(false)
             setTime(0)
+            console.log(JSON.parse(localStorage.getItem('games')).mouse_aim.times)
             removeData()
         }
 
