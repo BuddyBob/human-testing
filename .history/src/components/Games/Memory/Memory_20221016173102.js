@@ -11,14 +11,14 @@ export default function Memory(){
   const [problemSet, setProblemSet] = useState([])
   const [guessSet, setGuessSet] = useState([])
 
-  function dim(i){
+  async function dim(i){
     document.getElementsByClassName("cell"+problemSet[i])[0].classList.add('dim')
     document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('light')
   }
 
   async function lightUp(){
-    // wait for 5 seconds
     console.log("problemSet",problemSet)
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     //iterate through problem set and light up according cells
     for (let i = 0; i < problemSet.length; i++){
@@ -27,10 +27,9 @@ export default function Memory(){
       console.log("lightup NOW", problemSet)
       //wait for cells to light up then dim them
       await new Promise(resolve => setTimeout(resolve, 800));
-      dim(i)
+      await dim(i)
     }
     setProblem(false)
-    console.log(problemSet)
   }
 
 
@@ -39,23 +38,27 @@ export default function Memory(){
   }
 
 
+  //generate unique cell positions for problem
   if (problem){
-    const newProblemSet = []
-    for (let i = 0; i < level; i++) {
-      setProblemSet(prevProblemSet => {
-        // Object.assign would also work
-        return [...prevProblemSet, Math.floor(Math.random() * 9)];
-      });
-    }
-    setProblem(false)
-    // wait for 5 seconds
-  }
-  useEffect(() => {
-    lightUp()
-  }, [problemSet])
-  
 
-  
+    let newProblemSet = []
+    for (let i = 0; i < level; i++){
+      let randomCell = Math.floor(Math.random() * 9) + 1
+      if (newProblemSet.includes(randomCell)){
+        i--
+      } else {
+        newProblemSet.push(randomCell)
+      }
+    }
+
+    for (let i = 0; i < newProblemSet.length; i++){
+      setProblemSet(problemSet.push(newProblemSet[i]))
+    }
+
+    setProblem(false)
+    lightUp()
+    console.log(problemSet)
+  }
 
   return (
     <div>

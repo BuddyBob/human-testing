@@ -18,6 +18,8 @@ export default function Memory(){
 
   async function lightUp(){
     // wait for 5 seconds
+    await new Promise(r => setTimeout(r, 5000));
+    cellClick(20)
     console.log("problemSet",problemSet)
 
     //iterate through problem set and light up according cells
@@ -38,23 +40,24 @@ export default function Memory(){
     console.log(problemSet)
   }
 
+    useEffect(() => {
+        const newProblemSet = []
+        for (let i = 0; i < level; i++) {
+          setProblemSet(prevProblemSet => {
+            // Object.assign would also work
+            return [...prevProblemSet, Math.floor(Math.random() * 9)];
+          });
+        }
+    }, [problem, problemSet]);
 
-  if (problem){
-    const newProblemSet = []
-    for (let i = 0; i < level; i++) {
-      setProblemSet(prevProblemSet => {
-        // Object.assign would also work
-        return [...prevProblemSet, Math.floor(Math.random() * 9)];
-      });
-    }
-    setProblem(false)
-    // wait for 5 seconds
-  }
-  useEffect(() => {
-    lightUp()
-  }, [problemSet])
+    useEffect(() => {
+      if(problem) {
+        setProblem(false)
+        lightUp()
+      }
+    }, [problemSet]);
+  //generate unique cell positions for problem
   
-
   
 
   return (

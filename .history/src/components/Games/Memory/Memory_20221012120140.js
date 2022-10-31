@@ -7,55 +7,62 @@ import _ from "lodash";
 export default function Memory(){
   const [start, setStart] = useState(false)
   const [problem, setProblem] = useState(false)
-  const [level, setLevel] = useState(3)
+  const [level, setLevel] = useState(5)
   const [problemSet, setProblemSet] = useState([])
   const [guessSet, setGuessSet] = useState([])
 
-  function dim(i){
+  async function dim(i){
     document.getElementsByClassName("cell"+problemSet[i])[0].classList.add('dim')
     document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('light')
   }
 
   async function lightUp(){
-    // wait for 5 seconds
-    console.log("problemSet",problemSet)
-
+    //light up cells according to problemSet
+    console.log(problemSet)
+    //wait for cells to load
+    await new Promise(resolve => setTimeout(resolve, 500));
     //iterate through problem set and light up according cells
+    console.log("problmeSet length",problemSet.length)
     for (let i = 0; i < problemSet.length; i++){
       document.getElementsByClassName("cell"+problemSet[i])[0].classList.remove('dim')
       document.getElementsByClassName("cell"+problemSet[i])[0].classList.add('light')
-      console.log("lightup NOW", problemSet)
       //wait for cells to light up then dim them
       await new Promise(resolve => setTimeout(resolve, 800));
-      dim(i)
+      await dim(i)
     }
     setProblem(false)
-    console.log(problemSet)
   }
-
 
   function cellClick(c){
-    console.log(problemSet)
-  }
+    //add cell to guessSet and wait for it to add
+    setGuessSet(guessSet => [...guessSet, c])
+    //get new length of guessSet 
+    let clickCount = guessSet.length
 
+    // if (guessSet === problemSet.splice(0,clickCount)){
+    //   console.log(guessSet,problemSet.splice(0,clickCount))
+    // }
+
+  }
 
   if (problem){
-    const newProblemSet = []
-    for (let i = 0; i < level; i++) {
-      setProblemSet(prevProblemSet => {
-        // Object.assign would also work
-        return [...prevProblemSet, Math.floor(Math.random() * 9)];
-      });
+    //generate unique cell positions for problem
+    let newProblemSet = []
+    for (let i = 0; i < level; i++){
+      let randomCell = Math.floor(Math.random() * 16)
+      if (newProblemSet.includes(randomCell)){
+        i--
+      } else {
+        newProblemSet.push(randomCell)
+      }
     }
+    setProblemSet(newProblemSet)
+    console.log(newProblemSet)
+    setProblemSet(problemSet.push(newProblemSet))
     setProblem(false)
-    // wait for 5 seconds
-  }
-  useEffect(() => {
     lightUp()
-  }, [problemSet])
-  
+  }
 
-  
 
   return (
     <div>

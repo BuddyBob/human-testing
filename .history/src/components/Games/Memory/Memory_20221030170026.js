@@ -52,6 +52,7 @@ export default function Memory(){
   }
   useEffect(() => {
     lightUp()
+    console.log('hello')
   }, [problemSet])
   
 

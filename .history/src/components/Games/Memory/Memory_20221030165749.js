@@ -38,7 +38,6 @@ export default function Memory(){
     console.log(problemSet)
   }
 
-
   if (problem){
     const newProblemSet = []
     for (let i = 0; i < level; i++) {
@@ -48,12 +47,10 @@ export default function Memory(){
       });
     }
     setProblem(false)
-    // wait for 5 seconds
-  }
-  useEffect(() => {
     lightUp()
-  }, [problemSet])
-  
+    // wait for 5 seconds
+    setTimeout(() => {lightUp()}, 5000);
+  }
 
   
 
